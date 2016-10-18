@@ -82,14 +82,23 @@
 	
 	function formClear() {
 		try {
+			console.log("User cleared form.");
 			document.getElementById('radius').value = "0";
-			if (shapeType == "cone" || shapeType == "cylinder") {
-				document.getElementById('height').value = "0";
+			//console.log(shapeType);
+
+			var h = document.getElementById('height');
+			if(h) {
+				h.value = 0;
 			}
+			//if (shapeType == "cone" || shapeType == "cylinder") {
+			//	document.getElementById('height').value = "0";
+			//}
 			document.getElementById('volume').value = "";
-			document.getElementById('area').value = "";		
+			document.getElementById('area').value = "";
 		}
 		catch (err) {
 			//Do nothing for this error, just trap it
+			console.log(err);
+			//console.log(err.toString());
 		}
 	}
